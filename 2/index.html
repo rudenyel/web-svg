@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS in SVG</title>
+    <style></style>
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" height="320px" width="140px">
+      <title>Primary Color Stoplight</title>
+      <rect x="20" y="20" width="100" height="280" fill="blue" stroke="black" stroke-width="3" />
+      <circle cx="70" cy="80" r="30" fill="red" stroke="black" stroke-width="2" />
+      <circle cx="70" cy="160" r="30" fill="yellow" stroke="black" stroke-width="2" />
+      <circle cx="70" cy="240" r="30" fill="#40CC40" stroke="black" stroke-width="2" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" height="320px" width="140px">
+      <title>Grouped Lights Stoplight</title>
+      <rect x="20" y="20" width="100" height="280" fill="blue" stroke="black" stroke-width="3" />
+      <g stroke="black" stroke-width="2">
+        <circle cx="70" cy="80" r="30" fill="red" />
+        <circle cx="70" cy="160" r="30" fill="yellow" />
+        <circle cx="70" cy="240" r="30" fill="#40CC40" />
+      </g>
+    </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xml:lang="en"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      height="320px"
+      width="140px"
+    >
+      <title>Re-usable Lights Stoplight</title>
+      <defs>
+        <circle id="light" cx="70" r="30" />
+      </defs>
+      <rect x="20" y="20" width="100" height="280" fill="blue" stroke="black" stroke-width="3" />
+      <g stroke="black" stroke-width="2">
+        <use xlink:href="#light" y="80" fill="red" />
+        <use xlink:href="#light" y="160" fill="yellow" />
+        <use xlink:href="#light" y="240" fill="#40CC40" />
+      </g>
+    </svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" height="320px" width="140px">
+      <title>CSS-Styled Stoplight</title>
+      <style type="text/css">
+        rect,
+        circle {
+          stroke: black;
+          stroke-width: 3;
+        }
+        .light {
+          stroke-width: 2;
+        }
+      </style>
+      <rect x="20" y="20" width="100" height="280" style="fill: blue" />
+      <g stroke-width="3">
+        <circle class="light" style="fill: red" cx="70" cy="80" r="30" />
+        <circle class="light" style="fill: yellow" cx="70" cy="160" r="30" />
+        <circle class="light" style="fill: #40cc40" cx="70" cy="240" r="30" />
+      </g>
+    </svg>
+
+
+  </body>
+</html>

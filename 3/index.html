@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS in SVG</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" height="320px" width="140px">
+      <title>Stoplight</title>
+      <rect x="20" y="20" width="100" height="280" />
+      <defs>
+        <circle id="light" cx="70" r="30" />
+      </defs>
+      <g>
+        <use class="red" xlink:href="#light" y="80" />
+        <use class="yellow" xlink:href="#light" y="160" />
+        <use class="green" xlink:href="#light" y="240" />
+      </g>
+    </svg>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+.twitter {
+  background-image: url("twitter.svg");
+  height: 100px;
+  width: 300px;
+  background-repeat: repeat-x repeat-y; 
+}
